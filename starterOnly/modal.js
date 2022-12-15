@@ -1,3 +1,4 @@
+console.log("Hello");
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -11,6 +12,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const modalBtnClose = document.querySelector(".close"); 
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -18,6 +20,16 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+
 }
+
+function closeModal () {
+  console.log("closeModal") ;
+  modalBtnClose.style.display = "none";
+  modalbg.style.display = "none";
+}
+
+
+modalBtnClose.addEventListener("click" , closeModal );
 
 
