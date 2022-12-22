@@ -41,9 +41,9 @@ function isFormValid() {
   isFirstNameValid()
   isLastNameValid()
   isEmailValid()
-  isBirthdateValid()
+  
  
-  return isFirstNameValid() && isLastNameValid() && isEmailValid() && isBirthdateValid()  ;
+  return isFirstNameValid() && isLastNameValid() && isEmailValid()  ;
 }
 
 //Validation du Formulaire 
