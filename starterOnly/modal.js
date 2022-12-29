@@ -68,7 +68,7 @@ document.getElementById("formData")
         event.preventDefault() //permet de rendre inactif l'evenement 
         if (isFormValid ()) {
             closeModal()
-            
+            alert ( "Merci ! Votre réservation a été reçue. ");
             console.log("Formulaire Validé")
             document.getElementById("formData").reset(); // permet de reinitialiser le formulaire apres validation 
             
@@ -299,3 +299,4 @@ function isGeneralCondition(){
       return true;
   }
 }
+
