@@ -10,6 +10,8 @@
 }
 /* Landing Page */
 
+
+
 body {
   margin: 0;
   display: flex;
@@ -56,18 +58,65 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+ text-decoration: underline;
+
+
 }
 
-.topnav a.active {
+/* .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-}
+} */
 
 .topnav .icon {
   display: none;
 }
 
+/* @media screen and (max-width: 1100px ){
+    .top-nav a {
+        display: none!important;
+    }
+    .top-nav .responsive a{
+        float: none;
+        display: block!important;
+        text-align: left;
+    }
+    .top-nav .icon {
+        float: right;
+        display: block!important;
+    }
+}
+
+.top-nav a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 12px 12px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.top-nav a:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 15px;
+   
+}
+
+.top-nav a.active {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+.top-nav .icon {
+    display: none;
+}
+ */
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -93,13 +142,38 @@ img {
 
 
  @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+  
+  .topnav a {display: none;
+    
+     
+      color: #000000;
+      text-align: center;
+      padding: 32px 15px;
+      margin: 5px;
+      text-decoration: none;
+      font-size: 20px;
+      font-family: Roboto, sans-serif;
+  
+
+  }
+
+
   .topnav a.icon {
+    
     float: right;
     display: block;
     margin-top: -15px;
   }
+
+  
+  .hero-content {
+    display: inline;
+    width: 100%;
+    min-width: 0;
+    padding:0;
 } 
+
+ }
 
 main {
   font-size: 130%;
@@ -478,7 +552,7 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -495,6 +569,7 @@ footer {
     display: none;
   }
   .hero-headline {
+  
     font-size: 4.5rem;
     white-space: normal;
   }
@@ -525,5 +600,12 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+.formConfirmation {
+  
+  display: none ;
+  text-align: center;
+ 
 }
 

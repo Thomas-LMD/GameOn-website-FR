@@ -6,6 +6,7 @@ function editNav() {
   } else {
     x.className = "topnav";
   }
+  
 }
 
 // DOM Elements
@@ -17,9 +18,12 @@ const modalBtnClose = document.querySelector(".close");
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+
+// launch modal form (Ouverture de la fenetre d'inscription)
 function launchModal() {
   modalbg.style.display = "block";
+  formConfirmation.style.display = "none"
+
   console.log (" Ouverture de la fenetre d'inscription ");
   
 
@@ -27,12 +31,17 @@ function launchModal() {
 // close modal form
 function closeModal () {
   console.log("closeModal la fenetre d'inscription vient d'être fermée  ") ;
-
-  modalbg.style.display = "none";
+ modalbg.style.display = "none";
+  
+  
   
   
 }
-modalBtnClose.addEventListener("click" , closeModal );
+modalBtnClose.addEventListener("click" , closeModal ); // la fenetre d'inscription vient d'être fermée  au click 
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +59,7 @@ function isFormValid() {
   isLocation()
   isGeneralCondition()
   
+  
 
   return isFirstNameValid() && 
   isLastNameValid() &&
@@ -66,21 +76,23 @@ function isFormValid() {
 document.getElementById("formData")
     .addEventListener("submit", function (event) {
         event.preventDefault() //permet de rendre inactif l'evenement 
-        if (isFormValid ()) {
-            closeModal()
-            alert ( "Merci ! Votre réservation a été reçue. ");
+        if (isFormValid ()) { //si une fonction appelée isFormValid renvoie une valeur vraie.  le code à l'intérieur de "if " sera exécuté
+            closeModal ()
+            launchConfirmation()
+            
+           
             console.log("Formulaire Validé")
             document.getElementById("formData").reset(); // permet de reinitialiser le formulaire apres validation 
             
             return true
             
-        } else {
+        } else {   // Sinon renvoie faux 
             console.log("Problème formulaire , entré invalide ")
             return false
         }
     })
 
-//Form Control
+//Form Control ( Dom Elements du formulaire )
 const firstName = document.getElementById("firstName")
 const lastName1 = document.getElementById("lastName")
 const email = document.getElementById("email")
@@ -88,7 +100,7 @@ const birthdate = document.getElementById("birthdate")
 const participateTournaments = document.getElementById("quantity")
 const locations = document.getElementsByClassName("location")
 const generalCondition = document.getElementById("checkbox1")
-const checkbox2 = document.getElementById("checkbox2");
+const formConfirmation = document.getElementById("formConfirmation")
 
 
 
@@ -173,7 +185,7 @@ function isLastNameValid() {
   }
 }
 
-lastName.addEventListener("click" , isLastNameValid );
+lastName1.addEventListener("click" , isLastNameValid );
 
 //Je m'assure que l'entrée de l'utilisateur est conforme à la regex,
 // si c'est le cas, j'accepte l'entrée de l'utilisateur
@@ -241,7 +253,8 @@ birthdate.addEventListener("click" , isBirthdateValid  );
 // Je m'assure que l'utilisateur a saisi un nombre supérieur à 0 avec un maximun  à 99 et que le champs soit non  vide , si oui, je valide sa saisie
 
 function isParticipateTournaments() {
-  if (participateTournaments.value < 0 || participateTournaments.value >= 100 || participateTournaments.value === "" ) {
+  
+  if (participateTournaments.value < 0 || participateTournaments.value >= 100 || participateTournaments.value === ""  ) {
       let participateTournamentsErrorMessage = document.getElementById("quantityError")
       participateTournamentsErrorMessage.innerHTML = messagesErrors.participateTournamentsError;
       participateTournamentsErrorMessage.style.color = "red";
@@ -281,7 +294,7 @@ function isLocation(){
   return false;
 }
 
-locations.addEventListener("click" , isLocation  );
+
 
 // Je m'assure que l'utilisateur a vérifié les termes et conditions, sinon,
 // j'affiche un message d'erreur, sinon je valide la saisie de l'utilisateur
@@ -300,3 +313,11 @@ function isGeneralCondition(){
   }
 }
 
+
+function launchConfirmation() {
+  formConfirmation.style.display = "block";
+}
+
+function closeConfirmation() {
+  formConfirmation.style.display = "none";
+}
