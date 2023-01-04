@@ -254,7 +254,7 @@ birthdate.addEventListener("click" , isBirthdateValid  );
 
 function isParticipateTournaments() {
   
-  if (participateTournaments.value < 0 || participateTournaments.value >= 100 || participateTournaments.value === ""  ) {
+  if (participateTournaments.value < 0 || participateTournaments.value >= 100 || participateTournaments.value === "" || participateTournaments.value.includes(".")  ) {
       let participateTournamentsErrorMessage = document.getElementById("quantityError")
       participateTournamentsErrorMessage.innerHTML = messagesErrors.participateTournamentsError;
       participateTournamentsErrorMessage.style.color = "red";
