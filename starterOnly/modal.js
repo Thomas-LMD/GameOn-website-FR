@@ -1,4 +1,5 @@
 console.log("Bienvenue sur le site ");
+
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -13,7 +14,22 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const modalBtnClose = document.querySelector(".close"); 
+const modalBtnClose = document.querySelector(".close");
+
+
+
+//Form Control ( Dom Elements du formulaire )
+const firstName = document.getElementById("firstName")
+const lastName1 = document.getElementById("lastName")
+const email = document.getElementById("email")
+const birthdate = document.getElementById("birthdate")
+const participateTournaments = document.getElementById("quantity")
+const locations = document.getElementsByClassName("location")
+const generalCondition = document.getElementById("checkbox1")
+const formConfirmation = document.getElementById("formConfirmation")
+const closeConfirm = document.getElementById("closeForm");
+
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -22,7 +38,8 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form (Ouverture de la fenetre d'inscription)
 function launchModal() {
   modalbg.style.display = "block";
-  formConfirmation.style.display = "none"
+
+  
 
   console.log (" Ouverture de la fenetre d'inscription ");
   
@@ -32,10 +49,6 @@ function launchModal() {
 function closeModal () {
   console.log("closeModal la fenetre d'inscription vient d'être fermée  ") ;
  modalbg.style.display = "none";
-  
-  
-  
-  
 }
 modalBtnClose.addEventListener("click" , closeModal ); // la fenetre d'inscription vient d'être fermée  au click 
 
@@ -80,6 +93,7 @@ document.getElementById("formData")
             closeModal ()
             launchConfirmation()
             
+            
            
             console.log("Formulaire Validé")
             document.getElementById("formData").reset(); // permet de reinitialiser le formulaire apres validation 
@@ -92,15 +106,6 @@ document.getElementById("formData")
         }
     })
 
-//Form Control ( Dom Elements du formulaire )
-const firstName = document.getElementById("firstName")
-const lastName1 = document.getElementById("lastName")
-const email = document.getElementById("email")
-const birthdate = document.getElementById("birthdate")
-const participateTournaments = document.getElementById("quantity")
-const locations = document.getElementsByClassName("location")
-const generalCondition = document.getElementById("checkbox1")
-const formConfirmation = document.getElementById("formConfirmation")
 
 
 
@@ -316,8 +321,18 @@ function isGeneralCondition(){
 
 function launchConfirmation() {
   formConfirmation.style.display = "block";
+  
+   
+ 
+ 
+  
+
+  
 }
 
 function closeConfirmation() {
   formConfirmation.style.display = "none";
+  
 }
+// fermer le confirmation au clik sur le boutton fermer
+closeConfirm.addEventListener("click", closeConfirmation);
