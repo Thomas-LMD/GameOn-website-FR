@@ -15,6 +15,10 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalBtnClose = document.querySelector(".close");
+const modalBtnsignup = document.querySelector(".btn-signup");
+const modalBtnsignup2 = document.querySelector(".hero-section > .btn-signup");
+
+
 
 
 
@@ -39,12 +43,11 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 
-  
-
   console.log (" Ouverture de la fenetre d'inscription ");
-  
-
 }
+
+
+
 // close modal form
 function closeModal () {
   console.log("closeModal la fenetre d'inscription vient d'être fermée  ") ;
@@ -91,7 +94,9 @@ document.getElementById("formData")
         event.preventDefault() //permet de rendre inactif l'evenement 
         if (isFormValid ()) { //si une fonction appelée isFormValid renvoie une valeur vraie.  le code à l'intérieur de "if " sera exécuté
             closeModal ()
+           
             launchConfirmation()
+           
             
             
            
@@ -318,21 +323,26 @@ function isGeneralCondition(){
   }
 }
 
-
+// la fonction launchConfirmation permet de faire apparaitre le formulaire de confirmation 
+// et de desactiver le bouton "je m'inscris " 
 function launchConfirmation() {
   formConfirmation.style.display = "block";
-  
+  modalBtnsignup.disabled = true ;
+  modalBtnsignup2.disabled = true ;
    
- 
- 
-  
 
-  
 }
 
+// la fonction closeConfirmation permet de fermer la fenetre de confirmation 
+// elle reactive le bouton je m'inscris pour une nouvelle inscription 
 function closeConfirmation() {
   formConfirmation.style.display = "none";
-  
+
+  modalBtnsignup.disabled = false ;
+  modalBtnsignup2.disabled = false ;
 }
+ 
+
 // fermer le confirmation au clik sur le boutton fermer
-closeConfirm.addEventListener("click", closeConfirmation);
+closeConfirm.addEventListener("click", closeConfirmation );
+
