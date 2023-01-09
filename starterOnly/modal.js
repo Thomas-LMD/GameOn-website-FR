@@ -329,6 +329,9 @@ function launchConfirmation() {
   formConfirmation.style.display = "block";
   modalBtnsignup.disabled = true ;
   modalBtnsignup2.disabled = true ;
+  modalBtnsignup.style.visibility = "hidden" 
+  modalBtnsignup2.style.visibility = "hidden"
+
    
 
 }
@@ -340,6 +343,9 @@ function closeConfirmation() {
 
   modalBtnsignup.disabled = false ;
   modalBtnsignup2.disabled = false ;
+  modalBtnsignup.style.visibility = "visible"
+  modalBtnsignup2.style.visibility = "visible" 
+
 }
  
 
