@@ -17,14 +17,14 @@ const formData = document.querySelectorAll(".formData");
 const modalBtnClose = document.querySelector(".close");
 const modalBtnsignup = document.querySelector(".btn-signup");
 const modalBtnsignup2 = document.querySelector(".hero-section > .btn-signup");
-
+const hero = document.querySelector(".hero-section");
 
 
 
 
 //Form Control ( Dom Elements du formulaire )
 const firstName = document.getElementById("firstName")
-const lastName1 = document.getElementById("lastName")
+const lastName = document.getElementById("lastName")
 const email = document.getElementById("email")
 const birthdate = document.getElementById("birthdate")
 const participateTournaments = document.getElementById("quantity")
@@ -195,7 +195,7 @@ function isLastNameValid() {
   }
 }
 
-lastName1.addEventListener("click" , isLastNameValid );
+lastName.addEventListener("click" , isLastNameValid );
 
 //Je m'assure que l'entrée de l'utilisateur est conforme à la regex,
 // si c'est le cas, j'accepte l'entrée de l'utilisateur
@@ -331,7 +331,7 @@ function launchConfirmation() {
   modalBtnsignup2.disabled = true ;
   modalBtnsignup.style.visibility = "hidden" 
   modalBtnsignup2.style.visibility = "hidden"
-
+  hero.style.visibility = "hidden"
    
 
 }
@@ -340,11 +340,11 @@ function launchConfirmation() {
 // elle reactive le bouton je m'inscris pour une nouvelle inscription 
 function closeConfirmation() {
   formConfirmation.style.display = "none";
-
   modalBtnsignup.disabled = false ;
   modalBtnsignup2.disabled = false ;
   modalBtnsignup.style.visibility = "visible"
   modalBtnsignup2.style.visibility = "visible" 
+  hero.style.visibility = "visible "
 
 }
  
